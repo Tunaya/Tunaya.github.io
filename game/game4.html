@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>gamepage</title>
+    <style>
+        body{
+            background: url('imgs/back.png');
+            color: white;
+            overflow-y: hidden;
+        }
+     
+        #who{
+          width:300px;
+          position: relative;
+          left: 570px;
+          top: 25px;
+          border: 15px solid transparent;
+          padding:5px;
+          border-image: url(imgs/imgbox.png) 30 stretch;
+          z-index: 1;
+        }
+
+        .butn{
+          border: 5px solid transparent;
+          padding:5px;
+          width: 400px;
+          transition: all .5s;
+          transform-origin:center;
+        }
+
+        .butn:hover {
+          transform:scale(1.2) rotate(10deg);
+          
+        }
+
+        #anime{
+          position: absolute;
+          width: 100%;
+          left: 0px;
+          top: 0px;
+          padding: 5px;
+          z-index: 3;
+        }
+        img{
+          width: 100%;
+        }
+
+        .container-fluid{
+          position: relative;
+          top:125px;
+          width:1000px;
+          height: 1000px;
+        }
+
+        .row{
+          padding: 25px;
+        }
+        #intro{
+          position: absolute;
+          width:100%;
+          z-index: 2;
+        }
+
+    </style>
+  </head>
+
+
+  <body>
+  <div id="intro">
+    <img src="imgs/enter.gif"  alt="alt" >
+  </div>
+
+    <div id="who">
+      <img src="imgs/Evans.png"  alt="alt" >
+
+      <div id="anime">
+        <img src="imgs/out.gif" alt="alt">
+      </div>
+    </div>
+
+
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-sm-12 d-flex flex-row justify-content-between">
+
+            <div style="border-image: url(imgs/bor1.png) 50 stretch;" class="butn">
+              <img onclick="click1()" src="imgs/joe.png"  alt="alt" >
+            </div>
+
+            <div style="border-image: url(imgs/bor1.png) 50 stretch;" class="butn">
+              <img onclick="click2()" src="imgs/sh.png" alt="alt">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 d-flex flex-row justify-content-between">
+            
+            <div style="border-image: url(imgs/bor1.png) 50 stretch;" class="butn">
+              <img onclick="click3()" src="imgs/ce.png" alt="alt">
+            </div>
+
+            <div  style="border-image: url(imgs/bor1.png) 50 stretch;" class="butn">
+              <img onclick="click4()" src="imgs/tc.png" alt="alt">
+            </div>
+            
+          </div>
+        </div>        
+
+      </div>
+
+      <script>
+
+        function stop(){
+          location.href = "game5.html";
+        }
+
+        function click1(){
+          setTimeout(stop, 1000);
+          document.getElementById("intro").style.zIndex = 2;
+          document.getElementById("intro").innerHTML = "<img src='imgs/next.gif'>";
+        }
+
+        function click2(){
+          setTimeout(stop, 1000);
+          document.getElementById("intro").style.zIndex = 2;
+          document.getElementById("intro").innerHTML = "<img src='imgs/next.gif'>";
+        }
+
+        function click3(){
+          x = localStorage.getItem("scr");
+         var y = Number(x);
+          y++;
+          localStorage.setItem("scr",y);
+          setTimeout(stop, 1000);
+          document.getElementById("intro").style.zIndex = 2;
+          document.getElementById("intro").innerHTML = "<img src='imgs/next.gif'>";
+        }
+
+        function click4(){
+          setTimeout(stop, 1000);
+          document.getElementById("intro").style.zIndex = 2;
+          document.getElementById("intro").innerHTML = "<img src='imgs/next.gif'>";
+        }
+        setTimeout(function go() {
+          document.getElementById("intro").style.zIndex = -1;
+        }, 1000);
+      </script>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>
