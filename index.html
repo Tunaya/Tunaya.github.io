@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <title>Chopee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+    
+    .add{
+      border: none;
+      border-radius: 5px;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: #40AEFF;
+      text-align: center;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    .add:hover{
+      background-color: #8ECFFF;
+    }
+
+    #Basket{
+      border: 1px solid #40AEFF;
+    }
+
+    body{
+      background-color: #EFEFEF;
+    }
+
+    .card{
+      border-color: white;
+    }
+
+    .card:hover{
+      border-color: #40AEFF;
+    }
+
+    #Details{
+      background-color: white;
+      border-radius: 5px;
+    }
+
+    #Header{
+      position: sticky;
+      top: 0%;
+      z-index: 1;
+      height: 100px;
+      background-image: linear-gradient(#0093FF, #8ECFFF);
+    }
+
+    option{
+      margin-bottom: 2.5px;
+    }
+
+    .row{
+      margin-top: 25px;
+    }
+
+    #Sub{
+      border: none;
+      border-radius: 5px;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: #40AEFF;
+      text-align: center;
+      width: 100%;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    #Sub:hover{
+      background-color: #8ECFFF;
+    }
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+    <script>
+      const buy = {"prod_name":"dummy", "prod_price":0};
+      var z=0,cust_order=[], hold=[];
+
+      function Save(x,y,c){
+        var buy = { prod_name: c, prod_price: x };
+        cust_order.push(buy);
+        const please = JSON.stringify(cust_order);
+        z=z+x;
+        q=y*-1;
+          document.getElementById("Basket").innerHTML += '<option multiple class="form-control" onclick="Remove(this)">'+c+" - ₱"+x+'</option>';
+          document.getElementById("Total").innerHTML = "<h1>Total:₱"+z+".0</h1>";
+          document.getElementById("Send").innerHTML +='<input type="hidden" id="sneak100" name="cust_order" value="">';
+          document.getElementById("sneak100").id = y;
+          document.getElementById(y).value = please;
+          document.getElementById(q).disabled = true;
+          document.getElementById(q).innerHTML = "Out of stock!";
+      }
+
+      function Remove(AHH){
+
+        var WAHHH = AHH;
+           WAHHH.remove();
+      }
+
+
+
+    </script>
+  </head>
+
+  <body>
+    <div class="container-fluid" id="Header">
+      <img src="Logo.png" alt="lmao" style="width: 100px;">
+    </div>
+  
+    <div class="container" id="items">
+
+      <div class="row" id="Clothing">
+        <div class="col-12"><h1>Clothing</h1></div>
+      <div class="row" id="Clothing1">
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button id="-1" type="button" onclick="var x=25, y=1, c='GWA BEFORE JOWA JACKET' ;Save(x,y,c)" class="add" >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=2 ;Save(x,y)" class="add">Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=3 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row" id="Clothing2">
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=4 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=5 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=6 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      </div>
+
+      
+      <div class="row" id="Elect" style="margin-top:25px; margin-bottom:25px; border-top:2px solid #0093FF;">
+        <div class="col-12"><h1>Electronics</h1></div>
+      <div class="row" id="Elect1">
+
+        <div class="col-4">
+          <div class="card">
+            <img src="Spin.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>FIDGET SPINNER CAMERA</b></h4>
+              <p>Able to get a full 360 angle of that beautiful smile.</p>
+              <p><button id="-7" type="button" onclick="var x=500, y=7, c='FIDGET SPINNER CAMERA';Save(x,y,c)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="Ram.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>RAM AS DURABLE AS A PISAYER'S BRAIN</b></h4>
+              <p>Backup RAM for when you forget you brain at home.</p>
+              <p><button type="button" onclick="var x=500;var y=8 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=9 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row" id="Elect2">
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=10 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=11 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=12 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      </div>
+
+      <div class="row" id="Study" style="margin-top:25px; margin-bottom:25px; border-top:2px solid #0093FF;">
+        <div class="col-12"><h1>Study</h1></div>
+      <div class="row" id="Study1">
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=13 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=14 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=15 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row" id="Study2">
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=16 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=17 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=18 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      </div>
+
+      <div class="row" id="Foods" style="margin-top:25px; margin-bottom:25px; border-top:2px solid #0093FF;">
+        <div class="col-12"><h1>Foods</h1></div>
+      <div class="row" id="Foods1">
+
+        <div class="col-4">
+          <div class="card">
+            <img src="Cereal.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>VERITAS OWL CEREAL</b></h4>
+              <p>Sourced from an actual owl.</p>
+              <p><button id="-19" type="button" onclick="var x=25, y=19, c='VERITAS OWL CEREAL' ;Save(x,y,c)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=20 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=21 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row" id="Foods2">
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=22 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y=23 ;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <img src="GWA.png" alt="GWA" style="width:100%">
+            <div class="container">
+              <h4><b>GWA BEFORE JOWA JACKET</b></h4>
+              <p>A special reminder for all your friends.</p>
+              <p><button type="button" onclick="var x=500;var y= 24;Save(x,y)" class="add"  >Add to cart</button></p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      </div>
+
+    </div>
+
+    <div class="container" id="checkout" style="margin-top:25px; margin-bottom:25px; border-top:2px solid #0093FF;">
+      <div class="row d-flex justify-content-between">
+
+        <div class="col-xl-8" id="Details" style="margin-bottom:15px;">
+
+          <form action="http://sirjm.infinityfreeapp.com/checkout.php" method="GET" id="Send">
+          <div class="form-group" id="Name" >
+            <label for="name1" style="color: grey;">Friend's name</label>
+            <input type="text" class="form-control" placeholder="Enter name" name="cust_name" id="name1">
+          </div>
+          
+          <div class="form-group" id="Email">
+            <label for="email" style="color: grey;">Friend's email</label>
+            <input type="email" class="form-control" placeholder="Enter email" name="cust_email" id="email"> 
+          </div>
+
+          <div class="form-group" id="Address" style="margin-bottom:10px;">
+            <label for="adress1" style="color: grey;">Friend's address</label>
+            <input type="text" class="form-control"  placeholder="Enter address" name="cust_addr" id="adress1">
+          </div>
+          <input type="submit" id="Sub" value="Order">
+          </form>
+
+        </div>
+
+        <div class="col-xl-4" id="Buy">
+          <select multiple class="form-control" id="Basket">
+
+          </select>
+          <p id="Text">(click on a item to remove)</p>
+    
+
+        <div id="Total">
+          <h1>Total:</h1>
+        </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+  </body>
+
+</html>
